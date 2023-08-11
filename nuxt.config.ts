@@ -1,12 +1,18 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
-  runtimeConfig: {
-    // The private keys which are only available server-side
-    apiSecret: '123',
-    // Keys within public are also exposed client-side
-    public: {
-      apiBase: '/api'
+  devtools: { enabled: true },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/styles/_variables.scss" as *;'
+        }
+      }
     }
   },
-  devtools: { enabled: true }
+  css: ['~/assets/styles/theme/dark.scss', '~/assets/styles/theme/light.scss', '~/assets/styles/reset.scss', '~/assets/styles/main.scss'],
+  components: [
+    { path: '~/widgets',extensions: ['.vue'],  pathPrefix: false,},
+    { path: '~/shared',extensions: ['.vue'], pathPrefix: false, },
+  ]
 })
