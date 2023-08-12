@@ -1,4 +1,4 @@
 export interface IRoute {
-    route: string;
-    title: string;
+  route: string;
+  title: string;
 }

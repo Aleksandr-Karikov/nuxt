@@ -22,4 +22,10 @@ logs
 .env.*
 !.env.example
 
+assets
+
+locales
+
 .vscode
+
+.stylelintrc.json
